@@ -5,7 +5,7 @@ block content
   form(action='/' method="post")
     label(for="departure") Departure City
     div
-      select(id="departure" name="departure")
+      select(id="departure" name="departure" required)
         option(value="" disabled selected) Choose a City
         option(value=2) New York
         option(value=0) Chicago
