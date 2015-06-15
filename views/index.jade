@@ -2,4 +2,39 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  form(action='/' method="post")
+    label(for="departure") Departure City
+    div
+      select(id="departure" name="departure")
+        option(value="" disabled selected) Choose a City
+        option(value=2) New York
+        option(value=0) Chicago
+        option(value=1) Los Angeles
+    label(for="destination") Destination City    
+    div
+      select(id="destination" name="destination" required)
+        option(value="" disabled selected) Choose a City
+        option(value=2) New York
+        option(value=0) Chicago
+        option(value=1) Los Angeles
+    label(for="bags") Number of checked bags
+    div
+      input(type="number", id="bags" name="bags" value="0")
+    label(for="upgrade") Class
+    div
+      select(id="upgrade" name="class" required)
+        option(value="" disabled selected) Choose your class
+        option(value=0) Coach
+        option(value=200) Business (+ $200)
+        option(value=500) First (+ $500)
+    div
+      input(type="checkbox" name="wifi" id="wifi" value=12)
+      label(for="wifi") wifi
+    div
+      label(for="discount") Discount code
+    div
+      input(type="text" id="discount" name="discount" placeholder="Enter Discount Code")
+    div
+      button(type="submit" name="calculate" id="calculate") Calculate Price
+    div
+      h2= price
